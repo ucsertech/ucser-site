@@ -6,51 +6,104 @@
 </head>
 <body>
   <div class="container">
-    <div class="nav">
-      <a href="index.html" class="brand">
-        <img src="assets/logo.png" alt="Uçser">
-      </a>
 
-      <div class="tabs">
-        <a href="index.html" class="tab">Ana Sayfa</a>
-        <a href="karakutu.html" class="tab active">Kara Kutu</a>
-        <a href="projeler.html" class="tab">Projeler</a>
-        <a href="index.html#iletisim" class="tab">İletişim</a>
-      </div>
+    <!-- NAV -->
+    <div class="sticky">
+      <div class="nav container" style="padding:0">
+        <a href="index.html" class="brand">
+          <img src="assets/logo.png" alt="Uçser">
+        </a>
 
-      <div class="actions">
-        <a class="btn outline" href="login.html">Giriş</a>
-        <a class="btn" href="admin.html">Admin</a>
+        <div class="tabs">
+          <a href="index.html" class="tab">Ana Sayfa</a>
+          <a href="karakutu.html" class="tab active">Kara Kutu</a>
+          <a href="projeler.html" class="tab">Projeler</a>
+          <a href="index.html#iletisim" class="tab">İletişim</a>
+        </div>
+
+        <div class="actions">
+          <a class="btn outline" href="login.html">Giriş</a>
+          <a class="btn" href="admin.html">Admin</a>
+        </div>
       </div>
     </div>
 
+    <!-- HERO -->
     <section class="card" style="margin-top:22px">
-      <h1 class="h1">Kara Kutu</h1>
+      <span class="badge">Uçser Kara Kutu</span>
+      <h1 class="h1">Yeni nesil uçuş güvenliği<br/>destek sistemi</h1>
       <p class="muted">
-        Uçuş sırasında kritik verileri kayıt altına almayı ve olay anlarını zaman damgalı şekilde saklamayı hedefleyen
-        Uçser’in ilk ürünüdür.
+        Geleneksel kara kutular tarihsel olarak “kaza sonrası veri kurtarma” odaklıdır.
+        <b>Uçser Kara Kutu</b> ise bu yaklaşımı genişleterek <b>gerçek zamanlı izleme</b>, <b>erken uyarı</b>,
+        <b>olay yönetimi</b> ve <b>uçuş sonrası gelişmiş analiz</b> fonksiyonlarını bütüncül bir sistemde birleştirir.
       </p>
     </section>
 
     <section class="card">
-      <h2>Ne yapar?</h2>
-      <ul class="muted">
-        <li>Uçuş verilerini loglar</li>
-        <li>Olay/hata anlarını zaman damgası ile kaydeder</li>
-        <li>Analiz ve raporlama için düzenli kayıt üretir</li>
-      </ul>
+      <h2>Problem ve ihtiyaç</h2>
+      <p class="muted">
+        Mevcut veri kayıt sistemleri uçuş boyunca veri toplasa da, bu verilerin uçuş esnasında aktif değerlendirilmesine sınırlı imkân tanır.
+        Ayrıca pek çok çözüm yüksek maliyetli ve kapalı mimarilidir; eğitim–Ar-Ge ve prototipleme için erişilebilir değildir.
+        Uçser Kara Kutu; <b>modüler, geliştirilebilir ve erişilebilir</b> bir alternatif hedefler.
+      </p>
     </section>
 
     <section class="card">
-      <h2>Hedeflenen modüller</h2>
+      <h2>Amaç ve teknik kapsam</h2>
       <div class="grid">
-        <div class="card"><b>Veri Kaydı</b><br><span class="muted">Zaman damgalı loglama</span></div>
-        <div class="card"><b>Güvenlik</b><br><span class="muted">Yetkilendirme & erişim</span></div>
-        <div class="card"><b>Analiz</b><br><span class="muted">Panel & rapor</span></div>
+        <div class="card">
+          <b>Veri Toplama</b><br>
+          <span class="muted">Çoklu sensör verisi, güvenli ve zaman damgalı kayıt.</span>
+        </div>
+        <div class="card">
+          <b>Gerçek Zamanlı İzleme</b><br>
+          <span class="muted">Uçuş sırasında takip ve erken uyarı/alarmlar.</span>
+        </div>
+        <div class="card">
+          <b>Analiz & Raporlama</b><br>
+          <span class="muted">Uçuş sonrası grafik, tablo, olay zaman çizelgesi.</span>
+        </div>
       </div>
+      <p class="muted" style="margin-top:10px">
+        Sistem yalnızca kayıt cihazı değil; <b>karar destek</b> yaklaşımıyla tasarlanır.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Mimari yaklaşım</h2>
+      <ul class="muted">
+        <li><b>Donanım katmanı:</b> sensörler ve kontrol birimleri</li>
+        <li><b>Haberleşme katmanı:</b> veri akışının sürekliliği</li>
+        <li><b>Yazılım & veri katmanı:</b> depolama, görselleştirme, analiz</li>
+      </ul>
+      <p class="muted">
+        Bu ayrım; sistemi <b>ölçeklenebilir</b>, <b>yönetilebilir</b> ve <b>geliştirilebilir</b> hale getirir.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Sensör füzyonu, zaman damgası ve güvenlik</h2>
+      <p class="muted">
+        Havacılıkta tek sensöre dayanmak risklidir. Uçser yaklaşımı; farklı kaynaklardan gelen verileri birlikte değerlendirerek
+        tutarlılık sağlar, yanlış alarm oranlarını düşürür. Veriler zaman damgalı ve senkronize kaydedilerek olayların
+        neden–sonuç ilişkisi güçlü biçimde analiz edilebilir.
+      </p>
+      <p class="muted">
+        Yetkilendirme ve veri bütünlüğü; sistem tasarımının ayrılmaz parçasıdır. Yetkisiz erişim girişimleri ve sistem anormallikleri loglanarak izlenebilirlik artırılır.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Yol haritası</h2>
+      <ol class="muted">
+        <li><b>Faz 1:</b> Prototip doğrulama, temel fonksiyonların stabilizasyonu</li>
+        <li><b>Faz 2:</b> Daha güçlü altyapı, mobil uyumlu izleme, geniş saha testleri</li>
+        <li><b>Faz 3:</b> Endüstriyel sensörler, gelişmiş raporlama, AI destekli anomali tespiti</li>
+      </ol>
     </section>
 
     <footer class="container muted">© Uçser — Kara Kutu</footer>
   </div>
 </body>
 </html>
+
