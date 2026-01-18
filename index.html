@@ -1,105 +1,88 @@
-<!doctype html><html lang="tr">
+<!doctype html>
+<html lang="tr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Uçser | Uçaklar için Kara Kutu</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UÇSER | Ana Sayfa</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
 
-    <!-- NAV -->
-    <div class="sticky">
-      <div class="nav container" style="padding:0">
-        <a href="index.html" class="brand">
-          <img src="assets/logo.png" alt="Uçser">
-        </a>
+<div class="nav-wrap" id="navbar">
+  <div class="nav container">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="UÇSER">
+    </a>
 
-       <div class="tabs">
-  <a href="karakutu.html" class="tab">Kara Kutu</a>
-  <a href="projeler.html" class="tab">Projeler</a>
-  <a href="sponsorlar.html" class="tab">Sponsorluk</a>
-  <a href="iletisim.html" class="tab">İletişim</a>
+    <div class="tabs">
+      <a class="tab active" href="index.html">Ana Sayfa</a>
+      <a class="tab" href="karakutu.html">Kara Kutu</a>
+      <a class="tab" href="projeler.html">Projeler</a>
+      <a class="tab" href="sponsorlar.html">Sponsorluk</a>
+      <a class="tab" href="iletisim.html">İletişim</a>
+    </div>
+  </div>
 </div>
 
- 
-    <!-- HERO -->
-    <section class="hero" style="margin-top:22px">
-      <div class="card">
-        <span class="badge">Uçser Girişim • Havacılık Veri Teknolojileri</span>
-        <h1 class="h1">Uçaklar için yeni nesil<br/>uçuş veri kaydı</h1>
+<div class="container page-pad">
 
+  <section class="hero">
+    <div class="hero-box">
+      <div class="card soft">
+        <span class="badge">UÇSER Tech</span>
+        <h1 class="h1">Havacılık için veri odaklı güvenlik yaklaşımı.</h1>
         <p class="muted">
-          Havacılıkta hata toleransı çok düşüktür. <b>Uçser</b>, uçuş verilerini yalnızca “kaza sonrası inceleme” için değil,
-          <b>uçuş sırasında izleme, erken uyarı ve olay yönetimi</b> için de kullanmayı hedefler.
+          UÇSER, uçuş sırasında oluşan verilerin izlenmesi, olayların anlaşılması ve
+          sistemlerin geliştirilmesi için modüler bir proje ekosistemi kurar.
         </p>
 
-        <p class="muted">
-          İlk ürünümüz <b>Uçser Kara Kutu</b>; gerçek zamanlı izleme + zaman damgalı kayıt + uçuş sonrası analiz yaklaşımını
-          tek bir sistemde birleştiren yeni nesil bir uçuş güvenliği destek platformudur.
-        </p>
+        <div class="kpi">
+          <div class="pill">Gerçek zamanlı izleme vizyonu</div>
+          <div class="pill">Modüler yaklaşım</div>
+          <div class="pill">Ar-Ge ve eğitim odağı</div>
+        </div>
 
-        <div>
-          <a class="btn" href="karakutu.html">Kara Kutu’yu İncele</a>
-          <a class="btn outline" href="projeler.html">Tüm Projeler</a>
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="karakutu.html">Kara Kutu Projesi</a>
+          <a class="btn secondary" href="sponsorlar.html">Sponsorluk</a>
         </div>
       </div>
 
       <div class="card">
-        <h3>Odak</h3>
-        <ul class="muted">
-          <li>Gerçek zamanlı izleme</li>
-          <li>Erken uyarı & alarm üretimi</li>
-          <li>Zaman damgalı, bütünlüğü korunmuş veri</li>
-          <li>Uçuş sonrası analiz & raporlama</li>
-          <li>Modüler, ölçeklenebilir mimari</li>
-        </ul>
-        <div style="margin-top:10px">
-          <a class="btn outline" href="login.html">Yönetici Girişi</a>
+        <h2 class="h2">Hızlı Bakış</h2>
+        <div class="list">
+          <div class="li"><span class="dot"></span><div><div class="h3">Proje 1: Kara Kutu</div><div class="muted">Veri toplama, izleme ve analiz yaklaşımı.</div></div></div>
+          <div class="li"><span class="dot"></span><div><div class="h3">Proje Ekosistemi</div><div class="muted">UÇSER çatısı altında yeni projeler yolda.</div></div></div>
+          <div class="li"><span class="dot"></span><div><div class="h3">Yerli & sürdürülebilir</div><div class="muted">Geliştirilebilir, büyüyen bir yapı hedefi.</div></div></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Hızlı Kartlar -->
-    <section class="card">
-      <h2>Neden Uçser Kara Kutu?</h2>
-      <div class="grid">
-        <div class="card"><b>Proaktif Güvenlik</b><br><span class="muted">Sadece kayıt değil, uçuş sırasında risk yakalama.</span></div>
-        <div class="card"><b>Geliştirilebilir</b><br><span class="muted">Modüler yapı, farklı platformlara uyum.</span></div>
-        <div class="card"><b>Analiz & Rapor</b><br><span class="muted">Uçuş sonrası veriyle hızlı değerlendirme.</span></div>
-      </div>
-    </section>
-    <section class="card">
-  <h2>Sponsorlar & Destekçiler</h2>
-  <p class="muted">
-    Uçser Kara Kutu Projesi; eğitim, Ar-Ge ve yerli teknoloji ekosistemini güçlendirmeyi hedefler.
-    Bu yolculukta destekçilerimizle birlikte büyüyoruz.
-  </p>
+  <section class="grid" style="margin-top:16px;">
+    <div class="card col-4">
+      <h2 class="h2">Vizyon</h2>
+      <p class="muted">Güvenlik odaklı, veriyle güçlenen havacılık sistemleri.</p>
+    </div>
+    <div class="card col-4">
+      <h2 class="h2">Yaklaşım</h2>
+      <p class="muted">Ölçeklenebilir mimari, anlamlı veri ve net sunum.</p>
+    </div>
+    <div class="card col-4">
+      <h2 class="h2">Topluluk</h2>
+      <p class="muted">Genç mühendislik kültürü ve sürekli gelişim.</p>
+    </div>
+  </section>
 
-  <div class="sponsors">
-    <div class="sponsor-card"><span>Sponsor Logo Alanı</span></div>
-    <div class="sponsor-card"><span>Sponsor Logo Alanı</span></div>
-    <div class="sponsor-card"><span>Sponsor Logo Alanı</span></div>
-    <div class="sponsor-card"><span>Sponsor Logo Alanı</span></div>
-  </div>
+  <footer class="container">
+    © UÇSER — ucsertech
+  </footer>
 
-      
-  <div style
+</div>
 
-
-    <!-- İletişim -->
-    <section id="iletisim" class="card">
-      <h2>İletişim</h2>
-      <p class="muted">İş birlikleri, demo ve yarışmalar için:</p>
-      <ul class="muted">
-        <li>E-posta: <b>iletisim@ucser.com</b></li>
-        <li>Web: <b>www.ucser.com</b></li>
-        <li>İnstagram: <b>@ucsertech</b></li>
-      </ul>
-    </section>
-
-    <footer class="container muted">© Uçser 2026 — Uçaklar için veri teknolojileri</footer>
-  </div>
+<script src="nav.js"></script>
 </body>
 </html>
+
 
 
