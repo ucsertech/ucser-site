@@ -89,52 +89,105 @@ input{width:100%;padding:12px;border-radius:10px;border:1px solid #2a3350;backgr
   min-height:120px;
   resize:vertical;
 }
-/* ====== CUSTOM SELECT (INPUT GİBİ) ====== */
-.select-wrap{
-  position:relative;
-}
+/* ===== CUSTOM DROPDOWN (PREMIUM) ===== */
+.dd{ position:relative; }
 
-.select-wrap select{
-  appearance:none;
-  -webkit-appearance:none;
-  -moz-appearance:none;
-
+.dd-btn{
   width:100%;
-  padding:12px 44px 12px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  padding:12px 14px;
   border-radius:12px;
   border:1px solid #2a3350;
   background:#0f1730;
   color:#e9ecf1;
-  font-size:14px;
   cursor:pointer;
+
+  transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
 }
 
-/* Ok ikonu */
-.select-wrap::after{
-  content:"▾";
-  position:absolute;
-  right:16px;
-  top:50%;
-  transform:translateY(-50%);
-  pointer-events:none;
-  color:#7f8bb3;
-  font-size:14px;
-}
-
-/* Hover */
-.select-wrap select:hover{
+.dd-btn:hover{
   border-color:#ff7a00;
+  transform:translateY(-1px);
 }
 
-/* Focus */
-.select-wrap select:focus{
+.dd-btn:focus{
   outline:none;
   border-color:#ff7a00;
-  box-shadow:0 0 0 2px rgba(255,122,0,.15);
+  box-shadow:0 0 0 2px rgba(255,122,0,.18);
 }
 
-/* Placeholder gibi ilk option */
-.select-wrap select option[value=""]{
-  color:#7f8bb3;
+.dd-label{
+  color:#7f8bb3; /* placeholder rengi */
+  font-weight:600;
+  text-align:left;
 }
 
+.dd.has-value .dd-label{
+  color:#e9ecf1; /* seçilince beyaz */
+}
+
+/* ok ikonu (css) */
+.dd-arrow{
+  width:10px; height:10px;
+  border-right:2px solid #7f8bb3;
+  border-bottom:2px solid #7f8bb3;
+  transform:rotate(45deg);
+  transition:transform .2s ease, border-color .2s ease;
+}
+
+.dd.open .dd-arrow{
+  transform:rotate(-135deg);
+  border-color:#ff7a00;
+}
+
+.dd-menu{
+  position:absolute;
+  left:0; right:0;
+  top:calc(100% + 10px);
+
+  background:rgba(18,26,43,.98);
+  border:1px solid #2a3350;
+  border-radius:14px;
+  overflow:hidden;
+
+  box-shadow:0 16px 50px rgba(0,0,0,.35);
+  opacity:0;
+  transform:translateY(-6px);
+  pointer-events:none;
+  transition:opacity .15s ease, transform .15s ease;
+  z-index:999;
+}
+
+.dd.open .dd-menu{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.dd-item{
+  width:100%;
+  text-align:left;
+  padding:12px 14px;
+  background:transparent;
+  border:0;
+  color:#e9ecf1;
+  cursor:pointer;
+  transition:background .12s ease, transform .12s ease;
+}
+
+.dd-item:hover{
+  background:rgba(255,122,0,.10);
+}
+
+.dd-item:focus{
+  outline:none;
+  background:rgba(255,122,0,.16);
+}
+
+.dd-item + .dd-item{
+  border-top:1px solid rgba(42,51,80,.65);
+}
