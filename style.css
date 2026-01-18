@@ -191,3 +191,163 @@ input{width:100%;padding:12px;border-radius:10px;border:1px solid #2a3350;backgr
 .dd-item + .dd-item{
   border-top:1px solid rgba(42,51,80,.65);
 }
+/* ===== FORM LAYOUT: FERAH + 2 KOLON ===== */
+.form-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:16px;
+  margin-top:16px;
+}
+
+@media (max-width: 820px){
+  .form-grid{ grid-template-columns:1fr; }
+}
+
+.field label{
+  display:block;
+  margin:0 0 8px 2px;
+  font-size:13px;
+  color:#aeb7d6;
+  font-weight:600;
+}
+
+.field.full, .full{
+  grid-column: 1 / -1;
+}
+
+.form-grid input,
+.form-grid textarea{
+  width:100%;
+  padding:14px 14px;
+  border-radius:14px;
+  border:1px solid #2a3350;
+  background:#0f1730;
+  color:#e9ecf1;
+  transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.form-grid input::placeholder,
+.form-grid textarea::placeholder{
+  color:#6f7aa6;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus{
+  outline:none;
+  border-color:#ff7a00;
+  box-shadow:0 0 0 2px rgba(255,122,0,.18);
+}
+
+.form-grid textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.btn-wide{
+  width:100%;
+  padding:14px 16px;
+  border-radius:14px;
+}
+
+/* ===== CUSTOM DROPDOWN (RENKLI + AYRIKLASTIRILMIS) ===== */
+.dd{ position:relative; }
+
+.dd-btn{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  padding:14px 14px;
+  border-radius:14px;
+  border:1px solid #2a3350;
+  background:#0f1730;
+  color:#e9ecf1;
+  cursor:pointer;
+
+  transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.dd-accent .dd-btn{
+  border-color: rgba(255,122,0,.45);
+  box-shadow: 0 0 0 1px rgba(255,122,0,.08) inset;
+}
+
+.dd-btn:hover{
+  border-color:#ff7a00;
+  transform:translateY(-1px);
+}
+
+.dd-btn:focus{
+  outline:none;
+  border-color:#ff7a00;
+  box-shadow:0 0 0 2px rgba(255,122,0,.18);
+}
+
+.dd-label{
+  color:#7f8bb3;
+  font-weight:700;
+  text-align:left;
+}
+
+.dd.has-value .dd-label{
+  color:#e9ecf1;
+}
+
+.dd-arrow{
+  width:10px; height:10px;
+  border-right:2px solid #7f8bb3;
+  border-bottom:2px solid #7f8bb3;
+  transform:rotate(45deg);
+  transition:transform .2s ease, border-color .2s ease;
+}
+
+.dd.open .dd-arrow{
+  transform:rotate(-135deg);
+  border-color:#ff7a00;
+}
+
+.dd-menu{
+  position:absolute;
+  left:0; right:0;
+  top:calc(100% + 10px);
+
+  background:rgba(18,26,43,.98);
+  border:1px solid rgba(255,122,0,.35);
+  border-radius:16px;
+  overflow:hidden;
+
+  box-shadow:0 16px 50px rgba(0,0,0,.35);
+  opacity:0;
+  transform:translateY(-6px);
+  pointer-events:none;
+  transition:opacity .15s ease, transform .15s ease;
+  z-index:999;
+}
+
+.dd.open .dd-menu{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.dd-item{
+  width:100%;
+  text-align:left;
+  padding:13px 14px;
+  background:transparent;
+  border:0;
+  color:#e9ecf1;
+  cursor:pointer;
+  font-weight:600;
+  transition:background .12s ease;
+}
+
+.dd-item:hover{
+  background:rgba(255,122,0,.14);
+}
+
+.dd-item + .dd-item{
+  border-top:1px solid rgba(42,51,80,.65);
+}
