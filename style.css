@@ -23,58 +23,53 @@ img{ max-width:100%; display:block; }
 }
 
 /* ===============================
-   NAVBAR (BÜYÜTÜLMÜŞ)
+   NAVBAR
 ================================ */
 .nav-wrap{
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(11, 15, 25, 0.92);
+  position:fixed;
+  top:0; left:0; right:0;
+  background:rgba(11,15,25,.88);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  z-index: 999;
-  transition: transform 0.3s ease;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  z-index:999;
+  transition: transform .25s ease;
 }
-
 .nav{
-  height: 84px;                 /* 70 -> 84 */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
 }
-
 .brand{
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
-
-.brand img{
-  height: 56px;                 /* 44 -> 56 */
+.brand img{ height:90px; }
+ 
+.tabs{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
-
-.brand-text{
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+.tab{
+  font-size:14px;
+  padding:8px 12px;
+  border-radius:10px;
+  color:#cbd5f5;
+  transition:.2s ease;
 }
-
-.brand-text strong{
-  font-size: 16px;
-  letter-spacing: 0.2px;
-  color: #e6e8ef;
+.tab:hover{
+  background:rgba(124,142,255,.14);
+  color:#fff;
 }
-
-.brand-text span{
-  font-size: 12px;
-  color: #9aa4c7;
+.tab.active{
+  background:#7c8eff;
+  color:#0b0f19;
+  font-weight:650;
 }
-
-/* Mobilde sadece logo kalsın, yazı gizlensin */
-@media (max-width: 820px){
-  .brand-text{ display:none; }
-   body{padding-top:92px;}
-
 
 /* ===============================
    TYPOGRAPHY
