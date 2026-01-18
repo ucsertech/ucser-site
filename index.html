@@ -6,68 +6,88 @@
 </head>
 <body>
   <div class="container">
-<div class="nav">
-  <a href="index.html" class="brand">
-    <img src="assets/logo.png" alt="Uçser">
-  </a>
 
-  <div class="tabs">
-    <a href="index.html" class="tab active">Ana Sayfa</a>
-    <a href="karakutu.html" class="tab">Kara Kutu</a>
-    <a href="projeler.html" class="tab">Projeler</a>
-    <a href="index.html#iletisim" class="tab">İletişim</a>
-  </div>
+    <!-- NAV -->
+    <div class="sticky">
+      <div class="nav container" style="padding:0">
+        <a href="index.html" class="brand">
+          <img src="assets/logo.png" alt="Uçser">
+        </a>
 
-  <div class="actions">
-    <a class="btn outline" href="login.html">Giriş</a>
-    <a class="btn" href="admin.html">Admin</a>
-  </div>
-</div>
+        <div class="tabs">
+          <a href="index.html" class="tab active">Ana Sayfa</a>
+          <a href="karakutu.html" class="tab">Kara Kutu</a>
+          <a href="projeler.html" class="tab">Projeler</a>
+          <a href="#iletisim" class="tab">İletişim</a>
+        </div>
 
-    <section class="hero">
-      <div class="card">
-        <span class="badge">Uçser Girişim</span>
-        <h1 class="h1">Uçaklar için yeni nesil<br/>uçuş veri kaydı</h1>
-        <p class="muted">İlk Projemiz<b> Kara Kutu</b>; olay anlarını zaman damgalı, güvenli ve analiz edilebilir şekilde kaydeder.</p>
-        <div>
-          <a class="btn" href="#kara-kutu">Projeyi İncele</a>
+        <div class="actions">
+          <a class="btn outline" href="login.html">Giriş</a>
+          <a class="btn" href="admin.html">Admin</a>
         </div>
       </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" style="margin-top:22px">
       <div class="card">
-        <h3>Kapsam</h3>
+        <span class="badge">Uçser Girişim • Havacılık Veri Teknolojileri</span>
+        <h1 class="h1">Uçaklar için yeni nesil<br/>uçuş veri kaydı</h1>
+
+        <p class="muted">
+          Havacılıkta hata toleransı çok düşüktür. <b>Uçser</b>, uçuş verilerini yalnızca “kaza sonrası inceleme” için değil,
+          <b>uçuş sırasında izleme, erken uyarı ve olay yönetimi</b> için de kullanmayı hedefler.
+        </p>
+
+        <p class="muted">
+          İlk ürünümüz <b>Uçser Kara Kutu</b>; gerçek zamanlı izleme + zaman damgalı kayıt + uçuş sonrası analiz yaklaşımını
+          tek bir sistemde birleştiren yeni nesil bir uçuş güvenliği destek platformudur.
+        </p>
+
+        <div>
+          <a class="btn" href="karakutu.html">Kara Kutu’yu İncele</a>
+          <a class="btn outline" href="projeler.html">Tüm Projeler</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Odak</h3>
         <ul class="muted">
-          <li>Uçuş veri loglama</li>
-          <li>Olay & hata kayıtları</li>
-          <li>Yönetici paneli</li>
-          <li>Genişletilebilir platform</li>
+          <li>Gerçek zamanlı izleme</li>
+          <li>Erken uyarı & alarm üretimi</li>
+          <li>Zaman damgalı, bütünlüğü korunmuş veri</li>
+          <li>Uçuş sonrası analiz & raporlama</li>
+          <li>Modüler, ölçeklenebilir mimari</li>
         </ul>
+        <div style="margin-top:10px">
+          <a class="btn outline" href="login.html">Yönetici Girişi</a>
+        </div>
       </div>
     </section>
 
-   <section id="projeler" class="card">
-  <h2>Projeler</h2>
-  <p class="muted">Uçser, uçak sistemleri odağında ürünler geliştiren bir girişimdir.</p>
-  <div class="grid">
-    <div class="card"><b>Kara Kutu</b><br><span class="muted">Uçuş veri kaydı & olay logları</span></div>
-    <div class="card"><b>Proje-02</b><br><span class="muted">Yakında</span></div>
-    <div class="card"><b>Proje-03</b><br><span class="muted">Yakında</span></div>
-  </div>
-</section>
+    <!-- Hızlı Kartlar -->
+    <section class="card">
+      <h2>Neden Uçser Kara Kutu?</h2>
+      <div class="grid">
+        <div class="card"><b>Proaktif Güvenlik</b><br><span class="muted">Sadece kayıt değil, uçuş sırasında risk yakalama.</span></div>
+        <div class="card"><b>Geliştirilebilir</b><br><span class="muted">Modüler yapı, farklı platformlara uyum.</span></div>
+        <div class="card"><b>Analiz & Rapor</b><br><span class="muted">Uçuş sonrası veriyle hızlı değerlendirme.</span></div>
+      </div>
+    </section>
 
-<section id="iletisim" class="card">
-  <h2>İletişim</h2>
-  <p class="muted">İş birlikleri, demo ve yarışmalar için:</p>
-  <ul class="muted">
-    <li>E-posta: <b>iletisim@ucser.com</b></li>
-    <li>Web: <b>www.ucser.com</b></li>
-  </ul>
-</section>
+    <!-- İletişim -->
+    <section id="iletisim" class="card">
+      <h2>İletişim</h2>
+      <p class="muted">İş birlikleri, demo ve yarışmalar için:</p>
+      <ul class="muted">
+        <li>E-posta: <b>iletisim@ucser.com</b></li>
+        <li>Web: <b>www.ucser.com</b></li>
+      </ul>
+    </section>
 
-
-    <footer class="container muted">
-      © Uçser 2026 TÜM HAKLARI SAKLIDIR                                         — https://www.ucser.com
-    </footer>
+    <footer class="container muted">© Uçser — Uçaklar için veri teknolojileri</footer>
   </div>
 </body>
 </html>
+
 
