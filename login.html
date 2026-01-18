@@ -1,32 +1,33 @@
-<!doctype html><html lang="tr">
+<!doctype html>
+<html lang="tr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Uçser | Giriş</title>
-<link rel="stylesheet" href="style.css">
-<script defer src="app.js"></script>
+  <meta charset="utf-8">
+  <title>UÇSER | Admin Giriş</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="form card">
-    <img src="assets/logo.png" style="height:70px"> 
-    <h2>UÇSER</h2>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-  <a class="btn outline" href="index.html">← Ana Sayfa</a>
-  <a class="btn outline" href="karakutu.html">Kara Kutu</a>
-  <a class="btn outline" href="projeler.html">Projeler</a>
+
+<div class="container" style="max-width:420px;margin-top:120px">
+  <section class="card" style="text-align:center">
+    <h1 class="h1">Admin Giriş</h1>
+    <p class="muted">Yetkili giriş</p>
+
+    <div class="field">
+      <label>Kullanıcı Adı</label>
+      <input id="username" placeholder="admin">
+    </div>
+
+    <div class="field">
+      <label>Şifre</label>
+      <input id="password" type="password" placeholder="••••••">
+    </div>
+
+    <button class="btn btn-wide" onclick="login()">Giriş Yap</button>
+
+    <p id="loginMsg" class="muted" style="margin-top:12px"></p>
+  </section>
 </div>
-    <h2>Giriş Yap</h2>
-    <input id="email" placeholder="E-posta">
-    <input id="password" type="password" placeholder="Şifre" style="margin-top:10px">
-    <button class="btn" style="margin-top:12px" onclick="login()">Giriş</button>
-    <p id="msg" class="muted"></p>
-  </div>
-  <input id="email" type="email" placeholder="Admin e-posta" required>
-<input id="password" type="password" placeholder="Şifre" required>
 
-<button class="btn" onclick="adminLogin()">Yönetici Girişi</button>
-<p id="loginMsg" class="muted"></p>
-
-<script type="module" src="app.js"></script>
-
+<script src="app.js"></script>
 </body>
 </html>
