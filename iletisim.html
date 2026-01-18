@@ -20,6 +20,7 @@
       <a href="karakutu.html" class="tab">Kara Kutu</a>
       <a href="projeler.html" class="tab">Projeler</a>
       <a href="sponsorlar.html" class="tab">Sponsorluk</a>
+      <a href="iletisim.html" class="tab active">İletişim</a>
     </div>
   </div>
 </div>
@@ -36,47 +37,46 @@
   </section>
 
   <!-- FORM -->
- <!-- KONU (CUSTOM DROPDOWN) -->
-<form class="form-grid" onsubmit="submitContact(event)">
+  <section class="card" style="max-width:820px;margin:18px auto">
+    <form id="contactForm" class="form-grid">
 
-  <div class="field">
-    <label>İsim Soyisim</label>
-    <input required id="c_name" placeholder="Ad Soyad">
-  </div>
+      <div class="field">
+        <label>İsim Soyisim</label>
+        <input required id="c_name" placeholder="Ad Soyad">
+      </div>
 
- <div class="field">
-    <label>Ne İçin İletişime Geçiyorsunuz</label>
-    <input required id="c_sebeb" placeholder="İletişim Sebebi">
-  </div>
+      <div class="field">
+        <label>Ne İçin İletişime Geçiyorsunuz</label>
+        <input required id="c_sebeb" placeholder="İletişim Sebebi (örn: Sponsorluk)">
+      </div>
 
+      <div class="field">
+        <label>Telefon</label>
+        <input required id="c_phone" placeholder="05xx xxx xx xx">
+      </div>
 
-  <div class="field">
-    <label>Telefon</label>
-    <input required id="c_phone" placeholder="05xx xxx xx xx">
-  </div>
+      <div class="field">
+        <label>E-posta</label>
+        <input required type="email" id="c_email" placeholder="ornek@mail.com">
+      </div>
 
-  <div class="field">
-    <label>E-posta</label>
-    <input required type="email" id="c_email" placeholder="ornek@mail.com">
-  </div>
+      <div class="field full">
+        <label>Konu Başlığı</label>
+        <input required id="c_subject" placeholder="Kısa başlık">
+      </div>
 
-  <div class="field full">
-    <label>Konu Başlığı</label>
-    <input required id="c_subject" placeholder="Kısa başlık">
-  </div>
+      <div class="field full">
+        <label>Mesaj</label>
+        <!-- input yerine textarea istersen daha iyi olur ama dokunmadım -->
+        <input required id="c_mesaj" placeholder="Mesajınızı Yazınız">
+      </div>
 
-   <div class="field full">
-    <label>Mesaj</label>
-    <input required id="c_mesaj" placeholder="Mesajınızı Yazınız">
-  </div>
+      <div class="full">
+        <button class="btn btn-wide" type="submit">Gönder</button>
+        <p id="formMsg" class="muted" style="margin-top:10px"></p>
+      </div>
 
-
-  <div class="full">
-    <button class="btn btn-wide">Gönder</button>
-    <p id="formMsg" class="muted" style="margin-top:10px"></p>
-  </div>
-
-</form>
+    </form>
   </section>
 
   <footer class="container muted" style="text-align:center">
@@ -87,13 +87,54 @@
 
 <script src="nav.js"></script>
 
+<!-- ✅ Firebase'i yükle (ÇOK ÖNEMLİ) -->
+<script type="module" src="app.js"></script>
+
+<!-- ✅ Formu Firestore'a yaz -->
 <script>
-function submitContact(e){
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
-  document.getElementById("formMsg").innerText =
-    "✅ Mesajınız alındı. En kısa sürede dönüş yapacağız.";
-}
+
+  const msg = document.getElementById("formMsg");
+
+  const payload = {
+    name: document.getElementById("c_name").value.trim(),
+    reason: document.getElementById("c_sebeb").value.trim(),
+    phone: document.getElementById("c_phone").value.trim(),
+    email: document.getElementById("c_email").value.trim(),
+    subject: document.getElementById("c_subject").value.trim(),
+    message: document.getElementById("c_mesaj").value.trim(),
+    page: "iletisim"
+  };
+
+  // boş alan kontrolü
+  for (const k of ["name","reason","phone","email","subject","message"]) {
+    if (!payload[k]) {
+      msg.innerText = "❌ Lütfen tüm alanları doldurun.";
+      return;
+    }
+  }
+
+  msg.innerText = "Gönderiliyor...";
+
+  try {
+    // app.js içinde window.sendContact olmalı
+    if (!window.sendContact) {
+      msg.innerText = "❌ Firebase bağlanmadı: app.js yüklenmedi (sendContact yok).";
+      return;
+    }
+
+    await window.sendContact(payload);
+
+    msg.innerText = "✅ Mesajınız alındı. En kısa sürede dönüş yapacağız.";
+    e.target.reset();
+  } catch (err) {
+    console.error(err);
+    msg.innerText = "❌ Hata: " + (err?.message || "Kayıt alınamadı");
+  }
+});
 </script>
 
 </body>
 </html>
+
