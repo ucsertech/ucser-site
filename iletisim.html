@@ -37,32 +37,61 @@
 
   <!-- FORM -->
  <!-- KONU (CUSTOM DROPDOWN) -->
-<div class="dd" id="topicDD">
-  <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false">
-    <span class="dd-label" id="topicLabel">Ne için iletişime geçiyorsunuz?</span>
-    <span class="dd-arrow" aria-hidden="true"></span>
-  </button>
+<form class="form-grid" onsubmit="submitContact(event)">
 
-  <div class="dd-menu" role="listbox" aria-label="Konu seçimi">
-    <button type="button" class="dd-item" data-value="Sponsorluk">Sponsorluk</button>
-    <button type="button" class="dd-item" data-value="İş Birliği">İş Birliği</button>
-    <button type="button" class="dd-item" data-value="Demo / Sunum">Demo / Sunum</button>
-    <button type="button" class="dd-item" data-value="Basın / Medya">Basın / Medya</button>
-    <button type="button" class="dd-item" data-value="Diğer">Diğer</button>
+  <div class="field">
+    <label>İsim Soyisim</label>
+    <input required id="c_name" placeholder="Ad Soyad">
   </div>
 
-  <input type="hidden" name="topic" id="topicValue" required>
-</div>
+  <div class="field">
+    <label>Ne için iletişime geçiyorsunuz?</label>
 
+    <!-- KONU (CUSTOM DROPDOWN) -->
+    <div class="dd dd-accent" id="topicDD">
+      <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false">
+        <span class="dd-label" id="topicLabel">Konu seç</span>
+        <span class="dd-arrow" aria-hidden="true"></span>
+      </button>
 
-      <input required placeholder="Telefon Numaranız">
-      <input required type="email" placeholder="E-posta">
-      <input required placeholder="Konu Başlığı">
-      <input required placeholder="Mesajınız">
+      <div class="dd-menu" role="listbox" aria-label="Konu seçimi">
+        <button type="button" class="dd-item" data-value="Sponsorluk">🤝 Sponsorluk</button>
+        <button type="button" class="dd-item" data-value="İş Birliği">🧩 İş Birliği</button>
+        <button type="button" class="dd-item" data-value="Demo / Sunum">🚀 Demo / Sunum</button>
+        <button type="button" class="dd-item" data-value="Basın / Medya">📰 Basın / Medya</button>
+        <button type="button" class="dd-item" data-value="Diğer">✨ Diğer</button>
+      </div>
 
-      <button class="btn">Gönder</button>
-      <p id="formMsg" class="muted"></p>
-    </form>
+      <input type="hidden" name="topic" id="topicValue" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Telefon</label>
+    <input id="c_phone" placeholder="05xx xxx xx xx">
+  </div>
+
+  <div class="field">
+    <label>E-posta</label>
+    <input required type="email" id="c_email" placeholder="ornek@mail.com">
+  </div>
+
+  <div class="field full">
+    <label>Konu Başlığı</label>
+    <input id="c_subject" placeholder="Kısa başlık">
+  </div>
+
+  <div class="field full">
+    <label>Mesaj</label>
+    <textarea id="c_msg" placeholder="Mesajınızı yazın..."></textarea>
+  </div>
+
+  <div class="full">
+    <button class="btn btn-wide">Gönder</button>
+    <p id="formMsg" class="muted" style="margin-top:10px"></p>
+  </div>
+
+</form>
   </section>
 
   <footer class="container muted" style="text-align:center">
