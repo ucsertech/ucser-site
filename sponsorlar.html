@@ -21,12 +21,16 @@
         <a href="index.html" class="tab">Ana Sayfa</a>
         <a href="karakutu.html" class="tab">Kara Kutu</a>
         <a href="projeler.html" class="tab">Projeler</a>
-        <a href="iletisim.html" class="tab">İletişim</a>
+        <a href="sponsorlar.html" class="tab active">Sponsorluk</a>
       </div>
 
+      <div class="actions">
+        <a class="btn outline" href="login.html">Giriş</a>
+        <a class="btn" href="admin.html">Admin</a>
+      </div>
+    </div>
+  </div>
 
-
-      
   <!-- HERO -->
   <section class="card" style="margin-top:22px">
     <span class="badge">Sponsorluk & İş Birliği</span>
@@ -120,21 +124,6 @@
       <li>✔ Uzun vadeli Ar-Ge ve insan kaynağı iş birlikleri</li>
     </ul>
   </section>
-  <section class="card">
-  <h2>Sponsorluk Dosyası</h2>
-  <p class="muted">
-    Sponsorluk paketleri ve detaylı proje özeti için PDF dosyamızı indirebilirsiniz.
-  </p>
-
-  <a class="btn" href="docs/ucser-sponsorluk (3).pdf" download>
-    Sponsorluk PDF’ini İndir
-  </a>
-
-  <a class="btn outline" href="docs/ucser-sponsorluk (3).pdf" target="_blank" style="margin-left:10px">
-    PDF’i Görüntüle
-  </a>
-</section>
-
 
   <!-- CTA -->
   <section class="card">
@@ -143,6 +132,7 @@
       Uçser Kara Kutu Projesi’ne sponsor olmak veya detaylı bilgi almak için
       bizimle iletişime geçebilirsiniz.
     </p>
+
 
     <section class="card" style="margin-top:24px;text-align:center">
   <span class="badge">Sponsorluk</span>
@@ -196,7 +186,6 @@
 </div>
 
 <script>
-const SPONSOR_EMAIL = "sponsor@ucser.com"; // 👈 değiştir
 
 document.getElementById("sponsorForm").addEventListener("submit", function(e){
   e.preventDefault();
@@ -219,30 +208,6 @@ document.getElementById("sponsorForm").addEventListener("submit", function(e){
     }
   }
 
-  /* ADMIN SPONSOR INBOX */
-  const box = JSON.parse(localStorage.getItem("ucser_sponsor_inbox") || "[]");
-  box.unshift(data);
-  localStorage.setItem("ucser_sponsor_inbox", JSON.stringify(box));
-
-  /* MAIL */
-  const subject = `[UÇSER SPONSORLUK] ${data.company} — ${data.budget}`;
-  const body =
-`Yeni sponsorluk başvurusu:
-
-İsim: ${data.name}
-Firma: ${data.company}
-E-posta: ${data.email}
-Telefon: ${data.phone}
-Bütçe: ${data.budget}
-
-Not:
-${data.note}`;
-
-  window.location.href =
-    `mailto:${SPONSOR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-  formMsg.innerText = "✅ Mail açıldı. Göndererek başvuruyu tamamlayın.";
-  e.target.reset();
 
     <ul class="muted">
       <li>📧 E-posta: <b>iletisim@ucser.com</b></li>
