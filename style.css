@@ -46,8 +46,8 @@ img{ max-width:100%; display:block; }
   align-items:center;
   gap:10px;
 }
-.brand img{ height:90px; }
- 
+.brand img{ height:72px; }
+
 .tabs{
   display:flex;
   align-items:center;
