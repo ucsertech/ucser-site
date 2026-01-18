@@ -11,6 +11,9 @@ import {
   addDoc,
   collection,
   serverTimestamp
+  query;
+  orderBy,
+  onSnapshot
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
 /* --- Firebase config --- */
@@ -24,7 +27,7 @@ const firebaseConfig = {
 };
 
 /* --- Tek admin email: BUNU DEĞİŞTİR --- */
-const ADMIN_EMAIL = "ADMIN_MAILINI_BURAYA_YAZ";
+const ADMIN_EMAIL = "yigityorulmaz1903@gmail.com";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -92,12 +95,21 @@ window.submitContactFirebase = async function submitContactFirebase(payload) {
   });
 };
 
-/* ========== FORM: SPONSOR (sponsorlar.html) ========== */
-window.submitSponsorFirebase = async function submitSponsorFirebase(payload) {
-  // payload: {name, email, phone, company, budget, note}
-  await addDoc(collection(db, "sponsor_requests"), {
-    ...payload,
-    createdAt: serverTimestamp(),
-    source: "sponsorlar"
+window.listenContactMessages = function listenContactMessages(cb) {
+  const q = query(collection(db, "contact_messages"), orderBy("createdAt", "desc"));
+  return onSnapshot(q, (snap) => {
+    const rows = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    cb(rows);
+  });
+};
+
+window.listenSponsorRequests = function listenSponsorRequests(cb) {
+  const q = query(collection(db, "sponsor_requests"), orderBy("createdAt", "desc"));
+  return onSnapshot(q, (snap) => {
+    const rows = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    cb(rows);
+  });
+};
+
   });
 };
