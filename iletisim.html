@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uçser | İletişim</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav-wrap" id="navbar">
+  <div class="nav container">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="Uçser">
+    </a>
+
+    <div class="tabs">
+      <a href="index.html" class="tab">Ana Sayfa</a>
+      <a href="karakutu.html" class="tab">Kara Kutu</a>
+      <a href="projeler.html" class="tab">Projeler</a>
+      <a href="sponsorlar.html" class="tab">Sponsorluk</a>
+      <a href="iletisim.html" class="tab active">İletişim</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- BAŞLIK -->
+  <section class="card" style="margin-top:24px;text-align:center">
+    <span class="badge">İletişim</span>
+    <h1 class="h1">Bizimle İletişime Geçin</h1>
+    <p class="muted">
+      Sponsorluk, iş birliği ve proje talepleriniz için formu doldurabilirsiniz.
+    </p>
+  </section>
+
+  <!-- FORM -->
+  <section class="card" style="max-width:720px;margin:20px auto">
+    <form class="form-grid" onsubmit="submitContact(event)">
+      <input required placeholder="İsim Soyisim">
+      <select required>
+        <option value="">Konu Seçiniz</option>
+        <option>Sponsorluk</option>
+        <option>İş Birliği</option>
+        <option>Demo / Sunum</option>
+        <option>Basın / Medya</option>
+        <option>Diğer</option>
+      </select>
+
+      <input placeholder="Telefon Numaranız">
+      <input required type="email" placeholder="E-posta">
+      <input placeholder="Konu Başlığı">
+      <textarea placeholder="Mesajınız"></textarea>
+
+      <button class="btn">Gönder</button>
+      <p id="formMsg" class="muted"></p>
+    </form>
+  </section>
+
+  <footer class="container muted" style="text-align:center">
+    © Uçser — İletişim
+  </footer>
+
+</div>
+
+<script src="nav.js"></script>
+
+<script>
+function submitContact(e){
+  e.preventDefault();
+  document.getElementById("formMsg").innerText =
+    "✅ Mesajınız alındı. En kısa sürede dönüş yapacağız.";
+}
+</script>
+
+</body>
+</html>
