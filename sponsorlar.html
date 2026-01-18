@@ -147,6 +147,106 @@
       bizimle iletişime geçebilirsiniz.
     </p>
 
+    <section class="card" style="margin-top:24px;text-align:center">
+  <span class="badge">Sponsorluk</span>
+  <h1 class="h1">Sponsorluk Başvurusu</h1>
+  <p class="muted">
+    UÇSER projelerine sponsor olmak için formu doldurun.
+  </p>
+</section>
+
+<section class="card" style="max-width:820px;margin:18px auto">
+<form id="sponsorForm" class="form-grid">
+
+  <div class="field">
+    <label>İsim Soyisim</label>
+    <input required id="s_name">
+  </div>
+
+  <div class="field">
+    <label>Firma / Kurum</label>
+    <input required id="s_company">
+  </div>
+
+  <div class="field">
+    <label>Telefon</label>
+    <input required id="s_phone">
+  </div>
+
+  <div class="field">
+    <label>E-posta</label>
+    <input required type="email" id="s_email">
+  </div>
+
+  <div class="field full">
+    <label>Sponsorluk Türü / Bütçe</label>
+    <input required id="s_budget" placeholder="Örn: 20.000 TL – Ana Sponsor">
+  </div>
+
+  <div class="field full">
+    <label>Not</label>
+    <textarea required id="s_note" style="min-height:140px"></textarea>
+  </div>
+
+  <div class="full">
+    <button class="btn btn-wide" type="submit">Gönder</button>
+    <p id="formMsg" class="muted" style="margin-top:10px"></p>
+  </div>
+
+</form>
+</section>
+
+</div>
+
+<script>
+const SPONSOR_EMAIL = "sponsor@ucser.com"; // 👈 değiştir
+
+document.getElementById("sponsorForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = {
+    id: Date.now(),
+    date: new Date().toLocaleString("tr-TR"),
+    name: s_name.value.trim(),
+    company: s_company.value.trim(),
+    phone: s_phone.value.trim(),
+    email: s_email.value.trim(),
+    budget: s_budget.value.trim(),
+    note: s_note.value.trim()
+  };
+
+  for (let k in data) {
+    if (!data[k]) {
+      formMsg.innerText = "❌ Lütfen tüm alanları doldurun.";
+      return;
+    }
+  }
+
+  /* ADMIN SPONSOR INBOX */
+  const box = JSON.parse(localStorage.getItem("ucser_sponsor_inbox") || "[]");
+  box.unshift(data);
+  localStorage.setItem("ucser_sponsor_inbox", JSON.stringify(box));
+
+  /* MAIL */
+  const subject = `[UÇSER SPONSORLUK] ${data.company} — ${data.budget}`;
+  const body =
+`Yeni sponsorluk başvurusu:
+
+İsim: ${data.name}
+Firma: ${data.company}
+E-posta: ${data.email}
+Telefon: ${data.phone}
+Bütçe: ${data.budget}
+
+Not:
+${data.note}`;
+
+  window.location.href =
+    `mailto:${SPONSOR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  formMsg.innerText = "✅ Mail açıldı. Göndererek başvuruyu tamamlayın.";
+  e.target.reset();
+
     <ul class="muted">
       <li>📧 E-posta: <b>iletisim@ucser.com</b></li>
       <li>📸 Instagram: <b>@ucsertech</b></li>
