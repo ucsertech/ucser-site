@@ -1,33 +1,40 @@
-/* =========================
-   UÇSER – APP.JS (Firebase YOK)
-   ========================= */
+/* ====== AYARLAR ====== */
+const ADMIN_USER = "admin";
+const ADMIN_PASS = "ucser123"; // 🔴 değiştir
+const SESSION_KEY = "ucser_admin_logged";
 
-/* --- Basit admin kilidi (isteğe bağlı) --- */
-const ADMIN_PASSWORD = "Hy124500.."; // değiştir
-
-window.adminLoginLocal = function(){
-  const pass = document.getElementById("adminPass")?.value || "";
+/* ====== LOGIN ====== */
+function login() {
+  const u = document.getElementById("username").value.trim();
+  const p = document.getElementById("password").value.trim();
   const msg = document.getElementById("loginMsg");
 
-  if(pass === ADMIN_PASSWORD){
-    localStorage.setItem("ucser_admin", "1");
-    window.location.href = "admin.html";
+  if (!u || !p) {
+    msg.innerText = "❌ Bilgileri doldurun";
+    return;
+  }
+
+  if (u === ADMIN_USER && p === ADMIN_PASS) {
+    localStorage.setItem(SESSION_KEY, "true");
+    msg.innerText = "✅ Giriş başarılı";
+    setTimeout(() => {
+      window.location.href = "admin.html";
+    }, 500);
   } else {
-    msg && (msg.innerText = "❌ Şifre yanlış");
+    msg.innerText = "❌ Hatalı bilgiler";
   }
-};
+}
 
-window.adminLogoutLocal = function(){
-  localStorage.removeItem("ucser_admin");
-  window.location.href = "index.html";
-};
-
-/* --- Admin sayfası koruması --- */
-(function protectAdmin(){
-  const path = (window.location.pathname || "").toLowerCase();
-  if(!path.endsWith("admin.html")) return;
-
-  if(localStorage.getItem("ucser_admin") !== "1"){
-    window.location.href = "admin-login.html";
+/* ====== ADMIN KORUMA ====== */
+function protectAdmin() {
+  const logged = localStorage.getItem(SESSION_KEY);
+  if (logged !== "true") {
+    window.location.href = "login.html";
   }
-})();
+}
+
+/* ====== LOGOUT ====== */
+function logout() {
+  localStorage.removeItem(SESSION_KEY);
+  window.location.href = "login.html";
+}
