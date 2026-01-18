@@ -58,3 +58,35 @@ input{width:100%;padding:12px;border-radius:10px;border:1px solid #2a3350;backgr
   backdrop-filter: blur(8px);
   border-bottom:1px solid #1e2745;
   padding:12px 0;
+
+  /* NAVBAR SCROLL BEHAVIOR */
+.nav-wrap{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  transition:transform .35s ease, opacity .35s ease;
+}
+.nav-hide{
+  transform:translateY(-100%);
+  opacity:0;
+}
+
+/* FORM */
+.form-grid{
+  display:grid;
+  gap:12px;
+}
+.form-grid input,
+.form-grid select,
+.form-grid textarea{
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid #2a3350;
+  background:#0f1730;
+  color:#e9ecf1;
+}
+.form-grid textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
