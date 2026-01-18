@@ -1,78 +1,54 @@
-<!doctype html>
-<html lang="tr">
+<!doctype html><html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Uçser | Uçak Kara Kutu Projesi</title>
-  <style>
-    body{font-family:Arial,system-ui;max-width:980px;margin:40px auto;padding:0 16px;line-height:1.65}
-    header{padding:28px 18px;border:1px solid #ddd;border-radius:14px}
-    h1{margin:0 0 10px}
-    .tag{display:inline-block;padding:4px 10px;border:1px solid #111;border-radius:999px;font-size:12px;margin-right:8px}
-    nav a{margin-right:12px;text-decoration:none;border-bottom:1px solid transparent}
-    nav a:hover{border-bottom:1px solid #111}
-    section{margin-top:22px;padding:18px;border:1px solid #eee;border-radius:14px}
-    .btn{display:inline-block;margin:10px 10px 0 0;padding:10px 14px;border:1px solid #111;border-radius:10px;text-decoration:none;color:#111}
-    footer{margin:28px 0;color:#666;font-size:14px}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uçser | Uçaklar için Kara Kutu</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <span class="tag">Uçser Girişim</span>
-    <span class="tag">Uçak Sistemleri</span>
-    <span class="tag">Kara Kutu</span>
-    <h1>Uçser — Uçak için Kara Kutu Projesi</h1>
-    <p>
-      Uçuş sırasında kritik verileri toplayan, olay anlarını kayda alan ve inceleme süreçlerini hızlandırmayı hedefleyen
-      yeni nesil bir “kara kutu” yaklaşımı.
-    </p>
-    <nav>
-      <a href="#proje">Proje</a>
-      <a href="#ozellikler">Özellikler</a>
-      <a href="#yol">Yol Haritası</a>
-      <a href="#iletisim">İletişim</a>
-    </nav>
-    <a class="btn" href="#iletisim">İletişime geç</a>
-  </header>
+  <div class="container">
+    <div class="nav">
+      <img src="assets/logo.png" alt="Uçser">
+      <div>
+        <a class="btn outline" href="#projeler">Projeler</a>
+        <a class="btn" href="login.html">Giriş Yap</a>
+      </div>
+    </div>
 
-  <section id="proje">
-    <h2>Proje Tanımı</h2>
-    <p>
-      Uçser’in ilk ürünü olan Kara Kutu Projesi; uçuş verilerini güvenli şekilde kaydetmeyi, olay anlarına dair
-      izlenebilir bir kayıt oluşturmayı ve bakım/analiz süreçlerine veri sağlamayı hedefler.
-    </p>
-  </section>
+    <section class="hero">
+      <div class="card">
+        <span class="badge">Uçser Girişim</span>
+        <h1 class="h1">Uçaklar için yeni nesil<br/>uçuş veri kaydı</h1>
+        <p class="muted">İlk ürünümüz <b>Kara Kutu</b>; olay anlarını zaman damgalı, güvenli ve analiz edilebilir şekilde kaydeder.</p>
+        <div>
+          <a class="btn" href="#kara-kutu">Projeyi İncele</a>
+          <a class="btn outline" href="login.html">Yönetici Girişi</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Kapsam</h3>
+        <ul class="muted">
+          <li>Uçuş veri loglama</li>
+          <li>Olay & hata kayıtları</li>
+          <li>Yönetici paneli</li>
+          <li>Genişletilebilir platform</li>
+        </ul>
+      </div>
+    </section>
 
-  <section id="ozellikler">
-    <h2>Hedeflenen Özellikler</h2>
-    <ul>
-      <li>Uçuş verisi kayıt mantığı (loglama)</li>
-      <li>Zaman damgalı olay kaydı</li>
-      <li>Yönetici paneli (sonraki aşama)</li>
-      <li>Güvenli erişim ve yetkilendirme (sonraki aşama)</li>
-    </ul>
-    <p><i>Not:</i> Kayıt ol / giriş yap / admin paneli sonraki aşamada eklenecek.</p>
-  </section>
+    <section id="kara-kutu" class="card">
+      <h2>Kara Kutu</h2>
+      <p class="muted">Kayıt, analiz ve izlenebilirlik odaklı bir platform. Demo aşamasında.</p>
+      <div class="grid">
+        <div class="card">Zaman Damgası</div>
+        <div class="card">Güvenli Kayıt</div>
+        <div class="card">Analiz</div>
+      </div>
+    </section>
 
-  <section id="yol">
-    <h2>Yol Haritası</h2>
-    <ol>
-      <li>Tanıtım sitesi yayını (bugün)</li>
-      <li>Kayıt / giriş altyapısı</li>
-      <li>Yönetici paneli</li>
-      <li>Cihaz verisi entegrasyonu</li>
-    </ol>
-  </section>
-
-  <section id="iletisim">
-    <h2>İletişim</h2>
-    <p>İş birlikleri, yarışmalar ve demo talepleri için:</p>
-    <ul>
-      <li>E-posta: <b>iletisim@domainin.com</b> (sonra gerçek mail yapacağız)</li>
-      <li>Instagram/LinkedIn: <b>@ucser</b> (sonra güncelleriz)</li>
-    </ul>
-  </section>
-
-  <footer>© Uçser — Tüm hakları saklıdır.</footer>
+    <footer class="container muted">
+      © Uçser — https://www.ucser.com
+    </footer>
+  </div>
 </body>
 </html>
+
