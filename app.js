@@ -1,115 +1,33 @@
-// Firebase (CDN modules) — GitHub Pages uyumlu
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-import {
-  getFirestore,
-  addDoc,
-  collection,
-  serverTimestamp
-  query;
-  orderBy,
-  onSnapshot
-} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+/* =========================
+   UÇSER – APP.JS (Firebase YOK)
+   ========================= */
 
-/* --- Firebase config --- */
-const firebaseConfig = {
-  apiKey: "AIzaSyASe8dNxDvuobSAkZ-0vgMcZBX_9WILPAk",
-  authDomain: "ucser-a2be1.firebaseapp.com",
-  projectId: "ucser-a2be1",
-  storageBucket: "ucser-a2be1.firebasestorage.app",
-  messagingSenderId: "761780483657",
-  appId: "1:761780483657:web:bdd079394e15415bf93198"
-};
+/* --- Basit admin kilidi (isteğe bağlı) --- */
+const ADMIN_PASSWORD = "Hy124500.."; // değiştir
 
-/* --- Tek admin email: BUNU DEĞİŞTİR --- */
-const ADMIN_EMAIL = "yigityorulmaz1903@gmail.com";
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-/* ========== ADMIN LOGIN (login.html) ========== */
-window.adminLogin = async function adminLogin() {
+window.adminLoginLocal = function(){
+  const pass = document.getElementById("adminPass")?.value || "";
   const msg = document.getElementById("loginMsg");
-  const email = (document.getElementById("email")?.value || "").trim();
-  const password = document.getElementById("password")?.value || "";
 
-  if (!email || !password) {
-    msg && (msg.innerText = "❌ E-posta ve şifre zorunlu.");
-    return;
-  }
-
-  msg && (msg.innerText = "Giriş yapılıyor...");
-
-  try {
-    const cred = await signInWithEmailAndPassword(auth, email, password);
-    const userEmail = cred.user.email || "";
-
-    if (userEmail !== ADMIN_EMAIL) {
-      await signOut(auth);
-      msg && (msg.innerText = "❌ Bu hesap admin değil.");
-      return;
-    }
-
-    msg && (msg.innerText = "✅ Başarılı. Yönlendiriliyorsun...");
+  if(pass === ADMIN_PASSWORD){
+    localStorage.setItem("ucser_admin", "1");
     window.location.href = "admin.html";
-  } catch (e) {
-    msg && (msg.innerText = "❌ Giriş başarısız: " + (e?.message || "Hata"));
+  } else {
+    msg && (msg.innerText = "❌ Şifre yanlış");
   }
 };
 
-window.adminLogout = async function adminLogout() {
-  await signOut(auth);
-  window.location.href = "login.html";
+window.adminLogoutLocal = function(){
+  localStorage.removeItem("ucser_admin");
+  window.location.href = "index.html";
 };
 
-/* ========== ADMIN SAYFASI KORUMA ========== */
-(function protectAdmin() {
+/* --- Admin sayfası koruması --- */
+(function protectAdmin(){
   const path = (window.location.pathname || "").toLowerCase();
-  if (!path.endsWith("admin.html")) return;
+  if(!path.endsWith("admin.html")) return;
 
-  onAuthStateChanged(auth, async (user) => {
-    if (!user) {
-      window.location.href = "login.html";
-      return;
-    }
-    if ((user.email || "") !== ADMIN_EMAIL) {
-      await signOut(auth);
-      window.location.href = "login.html";
-    }
-  });
+  if(localStorage.getItem("ucser_admin") !== "1"){
+    window.location.href = "admin-login.html";
+  }
 })();
-
-/* ========== FORM: İLETİŞİM (iletisim.html) ========== */
-window.submitContactFirebase = async function submitContactFirebase(payload) {
-  // payload: {name, email, phone, topic, subject, message}
-  await addDoc(collection(db, "contact_messages"), {
-    ...payload,
-    createdAt: serverTimestamp(),
-    source: "iletisim"
-  });
-};
-
-window.listenContactMessages = function listenContactMessages(cb) {
-  const q = query(collection(db, "contact_messages"), orderBy("createdAt", "desc"));
-  return onSnapshot(q, (snap) => {
-    const rows = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-    cb(rows);
-  });
-};
-
-window.listenSponsorRequests = function listenSponsorRequests(cb) {
-  const q = query(collection(db, "sponsor_requests"), orderBy("createdAt", "desc"));
-  return onSnapshot(q, (snap) => {
-    const rows = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-    cb(rows);
-  });
-};
-
-  });
-};
