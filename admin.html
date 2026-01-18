@@ -1,35 +1,32 @@
-<!doctype html><html lang="tr">
+<!doctype html>
+<html lang="tr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Uçser | Admin</title>
-<link rel="stylesheet" href="style.css">
-<script defer src="app.js"></script>
+  <meta charset="utf-8">
+  <title>UÇSER | Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container">
-    <div class="nav">
-      <img src="assets/logo.png">
-     <div class="nav">
-  <a href="index.html" class="brand">
-    <img src="assets/logo.png" alt="Uçser">
-  </a>
-  <div class="tabs">
-    <a href="index.html" class="tab">Ana Sayfa</a>
-    <a href="index.html#kara-kutu" class="tab">Kara Kutu</a>
+
+<body onload="protectAdmin()">
+
+<div class="nav-wrap">
+  <div class="nav container">
+    <strong>UÇSER Admin</strong>
+    <button class="btn" onclick="logout()">Çıkış</button>
   </div>
-  <button class="btn outline" onclick="logout()">Çıkış</button>
 </div>
 
+<div class="container">
 
-    <section class="card">
-      <h2>Yönetici Paneli</h2>
-      <p class="muted">Demo ekranı (ESP entegrasyonu sonra).</p>
-      <div class="grid">
-        <div class="card">Cihaz: Demo-01<br/>Durum: Online</div>
-        <div class="card">Son Olay: —</div>
-        <div class="card">Kayıt Sayısı: 0</div>
-      </div>
-    </section>
-  </div>
+<section class="card">
+  <h2 class="h2">Admin Panel</h2>
+  <p class="muted">Hoş geldin admin 👋</p>
+</section>
+
+<!-- BURAYA İLETİŞİM / SPONSOR INBOX GELİYOR -->
+<!-- senin daha önce yaptığımız tablolar burada -->
+
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
