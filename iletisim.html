@@ -39,6 +39,7 @@
   <section class="card" style="max-width:720px;margin:20px auto">
     <form class="form-grid" onsubmit="submitContact(event)">
       <input required placeholder="İsim Soyisim">
+      <div class="select-wrap">
       <select required>
         <option value="">Konu Seçiniz</option>
         <option>Sponsorluk</option>
@@ -47,11 +48,12 @@
         <option>Basın / Medya</option>
         <option>Diğer</option>
       </select>
+        </div>
 
       <input placeholder="Telefon Numaranız">
       <input required type="email" placeholder="E-posta">
       <input placeholder="Konu Başlığı">
-      <textarea placeholder="Mesajınız"></textarea>
+      <input placeholder="Mesajınız">
 
       <button class="btn">Gönder</button>
       <p id="formMsg" class="muted"></p>
