@@ -1,73 +1,35 @@
-<!doctype html>
-<html lang="tr">
+<!doctype html><html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Uçser | Admin Panel</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uçser | Admin</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="app.js"></script>
 </head>
 <body>
-
-<div class="container">
-
-<section class="card" style="margin-top:24px">
-  <span class="badge">Admin</span>
-  <h1 class="h1">İletişim Kutusu</h1>
-  <p class="muted" id="info"></p>
-</section>
-
-<section class="card" style="margin-top:16px">
-  <div style="overflow:auto">
-    <table style="width:100%;min-width:900px;border-collapse:collapse">
-      <thead>
-        <tr>
-          <th>Tarih</th>
-          <th>İsim</th>
-          <th>E-posta</th>
-          <th>Telefon</th>
-          <th>Sebep</th>
-          <th>Konu</th>
-          <th>Mesaj</th>
-        </tr>
-      </thead>
-      <tbody id="rows"></tbody>
-    </table>
+  <div class="container">
+    <div class="nav">
+      <img src="assets/logo.png">
+     <div class="nav">
+  <a href="index.html" class="brand">
+    <img src="assets/logo.png" alt="Uçser">
+  </a>
+  <div class="tabs">
+    <a href="index.html" class="tab">Ana Sayfa</a>
+    <a href="index.html#kara-kutu" class="tab">Kara Kutu</a>
   </div>
-
-  <button class="btn" style="margin-top:12px" onclick="clearInbox()">
-    Tüm Mesajları Sil
-  </button>
-</section>
-
+  <button class="btn outline" onclick="logout()">Çıkış</button>
 </div>
 
-<script>
-function loadInbox(){
-  const data = JSON.parse(localStorage.getItem("ucser_inbox") || "[]");
-  info.innerText = data.length ? `${data.length} mesaj var` : "Henüz mesaj yok.";
 
-  rows.innerHTML = data.map(m => `
-    <tr>
-      <td>${m.date}</td>
-      <td>${m.name}</td>
-      <td>${m.email}</td>
-      <td>${m.phone}</td>
-      <td>${m.reason}</td>
-      <td>${m.subject}</td>
-      <td>${m.message}</td>
-    </tr>
-  `).join("");
-}
-
-function clearInbox(){
-  if(confirm("Tüm mesajlar silinsin mi?")){
-    localStorage.removeItem("ucser_inbox");
-    loadInbox();
-  }
-}
-
-loadInbox();
-</script>
-
+    <section class="card">
+      <h2>Yönetici Paneli</h2>
+      <p class="muted">Demo ekranı (ESP entegrasyonu sonra).</p>
+      <div class="grid">
+        <div class="card">Cihaz: Demo-01<br/>Durum: Online</div>
+        <div class="card">Son Olay: —</div>
+        <div class="card">Kayıt Sayısı: 0</div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
