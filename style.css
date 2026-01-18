@@ -24,5 +24,24 @@ input{width:100%;padding:12px;border-radius:10px;border:1px solid #2a3350;backgr
 .tab{padding:8px 10px;border-radius:10px;border:1px solid transparent;color:var(--muted)}
 .tab:hover{border-color:#2a3350;color:var(--txt);background:rgba(255,255,255,.03)}
 .actions{display:flex;gap:10px;align-items:center}
+/* Daha bariz hover + imleç */
+.btn, .tab{cursor:pointer; transition:transform .12s ease, background .12s ease, border-color .12s ease, color .12s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.outline:hover{background:rgba(255,255,255,.06); border-color:#3b466b}
+.btn:hover{filter:brightness(1.05)}
+
+.tab:hover{
+  background:rgba(255,255,255,.06);
+  border-color:#3b466b;
+  color:var(--txt);
+  transform:translateY(-1px);
+}
+
+/* Aktif sekme */
+.tab.active{
+  background:rgba(255,122,0,.12);
+  border-color:rgba(255,122,0,.55);
+  color:var(--txt);
+}
 
 
