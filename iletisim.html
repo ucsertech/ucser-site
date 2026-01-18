@@ -36,19 +36,24 @@
   </section>
 
   <!-- FORM -->
-  <section class="card" style="max-width:720px;margin:20px auto">
-    <form class="form-grid" onsubmit="submitContact(event)">
-      <input required placeholder="İsim Soyisim">
-      <div class="select-wrap">
-      <select required>
-        <option value="">Konu Seçiniz</option>
-        <option>Sponsorluk</option>
-        <option>İş Birliği</option>
-        <option>Demo / Sunum</option>
-        <option>Basın / Medya</option>
-        <option>Diğer</option>
-      </select>
-        </div>
+ <!-- KONU (CUSTOM DROPDOWN) -->
+<div class="dd" id="topicDD">
+  <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false">
+    <span class="dd-label" id="topicLabel">Ne için iletişime geçiyorsunuz?</span>
+    <span class="dd-arrow" aria-hidden="true"></span>
+  </button>
+
+  <div class="dd-menu" role="listbox" aria-label="Konu seçimi">
+    <button type="button" class="dd-item" data-value="Sponsorluk">Sponsorluk</button>
+    <button type="button" class="dd-item" data-value="İş Birliği">İş Birliği</button>
+    <button type="button" class="dd-item" data-value="Demo / Sunum">Demo / Sunum</button>
+    <button type="button" class="dd-item" data-value="Basın / Medya">Basın / Medya</button>
+    <button type="button" class="dd-item" data-value="Diğer">Diğer</button>
+  </div>
+
+  <input type="hidden" name="topic" id="topicValue" required>
+</div>
+
 
       <input required placeholder="Telefon Numaranız">
       <input required type="email" placeholder="E-posta">
