@@ -89,4 +89,52 @@ input{width:100%;padding:12px;border-radius:10px;border:1px solid #2a3350;backgr
   min-height:120px;
   resize:vertical;
 }
+/* ====== CUSTOM SELECT (INPUT GİBİ) ====== */
+.select-wrap{
+  position:relative;
+}
+
+.select-wrap select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+
+  width:100%;
+  padding:12px 44px 12px 14px;
+  border-radius:12px;
+  border:1px solid #2a3350;
+  background:#0f1730;
+  color:#e9ecf1;
+  font-size:14px;
+  cursor:pointer;
+}
+
+/* Ok ikonu */
+.select-wrap::after{
+  content:"▾";
+  position:absolute;
+  right:16px;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+  color:#7f8bb3;
+  font-size:14px;
+}
+
+/* Hover */
+.select-wrap select:hover{
+  border-color:#ff7a00;
+}
+
+/* Focus */
+.select-wrap select:focus{
+  outline:none;
+  border-color:#ff7a00;
+  box-shadow:0 0 0 2px rgba(255,122,0,.15);
+}
+
+/* Placeholder gibi ilk option */
+.select-wrap select option[value=""]{
+  color:#7f8bb3;
+}
 
