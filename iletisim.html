@@ -44,27 +44,11 @@
     <input required id="c_name" placeholder="Ad Soyad">
   </div>
 
-  <div class="field">
-    <label>Ne için iletişime geçiyorsunuz?</label>
-
-    <!-- KONU (CUSTOM DROPDOWN) -->
-    <div class="dd dd-accent" id="topicDD">
-      <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false">
-        <span class="dd-label" id="topicLabel">Konu seç</span>
-        <span class="dd-arrow" aria-hidden="true"></span>
-      </button>
-
-      <div class="dd-menu" role="listbox" aria-label="Konu seçimi">
-        <button type="button" class="dd-item" data-value="Sponsorluk">🤝 Sponsorluk</button>
-        <button type="button" class="dd-item" data-value="İş Birliği">🧩 İş Birliği</button>
-        <button type="button" class="dd-item" data-value="Demo / Sunum">🚀 Demo / Sunum</button>
-        <button type="button" class="dd-item" data-value="Basın / Medya">📰 Basın / Medya</button>
-        <button type="button" class="dd-item" data-value="Diğer">✨ Diğer</button>
-      </div>
-
-      <input type="hidden" name="topic" id="topicValue" required>
-    </div>
+ <div class="field">
+    <label>Ne İçin İletişime Geçiyorsunuz</label>
+    <input id="c_sebeb" placeholder="İletişim Sebebi">
   </div>
+
 
   <div class="field">
     <label>Telefon</label>
@@ -81,10 +65,11 @@
     <input id="c_subject" placeholder="Kısa başlık">
   </div>
 
-  <div class="field full">
+   <div class="field full">
     <label>Mesaj</label>
-    <textarea id="c_msg" placeholder="Mesajınızı yazın..."></textarea>
+    <input id="c_mesaj" placeholder="Mesajınızı Yazınız">
   </div>
+
 
   <div class="full">
     <button class="btn btn-wide">Gönder</button>
