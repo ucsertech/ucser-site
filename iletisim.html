@@ -124,7 +124,8 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
       return;
     }
 
-    await window.sendContact(payload);
+  await window.submitContactFirebase(payload);
+
 
     msg.innerText = "✅ Mesajınız alındı. En kısa sürede dönüş yapacağız.";
     e.target.reset();
