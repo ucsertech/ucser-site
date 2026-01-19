@@ -10,7 +10,12 @@
 
 <div class="nav-wrap">
   <div class="nav container">
-     <a href="index.html" class="brand"><img src="assets/logo.png" alt="UÇSER"><div class="brand-text"><strong>UÇSER</strong><span> Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri</span></div>
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="UÇSER">
+      <div class="brand-text">
+        <strong>UÇSER</strong>
+        <span> Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri</span>
+      </div>
     </a>
     <div class="tabs">
       <a href="index.html" class="tab">Ana Sayfa</a>
@@ -25,44 +30,42 @@
 <section class="card" style="margin-top:24px;text-align:center">
   <span class="badge">İletişim</span>
   <h1 class="h1">Bizimle İletişime Geçin</h1>
-  <p class="muted">İnstagram: @ucsertech  mail:yigityorulmaz525@gmail.com</p>
+  <p class="muted">Instagram: @ucsertech</p>
 </section>
 
 <section class="card" style="max-width:820px;margin:18px auto">
+
 <form id="contactForm" class="form-grid">
 
   <div class="field">
     <label>İsim Soyisim</label>
-    <input required id="c_name">
+    <input name="name" required>
   </div>
 
   <div class="field">
     <label>İletişim Sebebi</label>
-    <input required id="c_sebeb">
+    <input name="reason" required>
   </div>
 
   <div class="field">
     <label>Telefon</label>
-    <input required id="c_phone">
+    <input name="phone" required>
   </div>
 
   <div class="field">
     <label>E-posta</label>
-    <input required type="email" id="c_email">
+    <input name="email" type="email" required>
   </div>
 
   <div class="field full">
     <label>Konu Başlığı</label>
-    <input required id="c_subject">
+    <input name="subject" required>
   </div>
 
-  
   <div class="field full">
     <label>Mesaj</label>
-    <input required id="c_mesaj">
+    <input name="message" required>
   </div>
-
-
 
   <div class="full">
     <button class="btn btn-wide" type="submit">Gönder</button>
@@ -71,38 +74,38 @@
 
 </form>
 </section>
-  
-   <footer class="container">
-    © 2026 UÇSER | Tüm hakları saklıdır.
-  </footer>
+
+<footer class="container">
+  © 2026 UÇSER | Tüm hakları saklıdır.
+</footer>
+
 </div>
 
-
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
-const TO_EMAIL = "ucsertech@gmail.com"; // 👈 burayı değiştir
+/* 🔑 BURAYI DOLDUR */
+emailjs.init("WGfoRLn3lkzWkYshR"); // public_xxxxx
 
 document.getElementById("contactForm").addEventListener("submit", function(e){
   e.preventDefault();
+  const msg = document.getElementById("formMsg");
+  msg.innerText = "Gönderiliyor...";
 
-  const data = {
-    id: Date.now(),
-    date: new Date().toLocaleString("tr-TR"),
-    name: c_name.value.trim(),
-    reason: c_sebeb.value.trim(),
-    phone: c_phone.value.trim(),
-    email: c_email.value.trim(),
-    subject: c_subject.value.trim(),
-    message: c_mesaj.value.trim()
-  };
-
-  for (let k in data) {
-    if (!data[k]) {
-      formMsg.innerText = "❌ Lütfen tüm alanları doldurun.";
-      return;
-    }
-  }
-
+  emailjs.sendForm(
+    "service_nz8g81u",   // service_xxxxx
+    "template_yil4zlv",  // template_xxxxx
+    this
+  ).then(function(){
+      msg.innerText = "✅ Mesajınız başarıyla iletildi.";
+      document.getElementById("contactForm").reset();
+  }, function(error){
+      msg.innerText = "❌ Bir hata oluştu, lütfen tekrar deneyin.";
+      console.error(error);
+  });
+});
+</script>
 
 </body>
 </html>
