@@ -3,88 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UÇSER</title>
-  <link rel="icon" href="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <title>UÇSER | Ana Sayfa</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="nav-wrap">
-  <div class="nav-inner">
-    <div class="nav container">
-      <a href="index.html" class="brand" id="brandLogoTrigger">
-        <img src="assets/logo.png" alt="UÇSER">
-        <div class="brand-text">
-          <strong>UÇSER</strong>
-          <span>Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri</span>
-        </div>
-      </a>
-
-      <div style="display:flex;align-items:center;gap:10px">
-        <div class="tabs">
-          <a href="index.html" class="tab" data-i18n="nav_home">Ana Sayfa</a>
-          <a href="projeler.html" class="tab" data-i18n="nav_projects">Projeler</a>
-          <a href="iletisim.html" class="tab" data-i18n="nav_contact">İletişim</a>
-        </div>
-
-
-        
-<div class="container">
-
-  <section class="card hero section">
-    <span class="badge" data-i18n="hero_badge">UÇSER</span>
-    <h1 class="h1" data-i18n="hero_title">Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri</h1>
-    <p class="p muted" data-i18n="hero_sub">Sade, güvenilir ve ölçeklenebilir yaklaşım ile teknoloji geliştirmeye odaklanıyoruz.</p>
-
-    <div class="actions">
-      <a class="btn primary" href="projeler.html" data-i18n="nav_projects">Projeler</a>
-      <a class="btn" href="iletisim.html" data-i18n="nav_contact">İletişim</a>
-      <span class="pill" id="modePill" data-mode-label></span>
+<div class="nav-wrap" id="navbar">
+  <div class="nav container">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="UÇSER"><div class="brand-text"><strong>UÇSER</strong><span> Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri</span></div>    </a>
+    <div class="tabs">
+      <a class="tab active" href="index.html">Ana Sayfa</a>
+      <a class="tab" href="projeler.html">Projeler</a>
+      <a class="tab" href="iletisim.html">İletişim</a>
     </div>
-  </section>
+  </div>
+</div>
 
-  <section class="grid section">
-    <div class="card idcard col-6">
-      <div class="id-top">
-        <img src="assets/logo.png" alt="UÇSER">
-        <div class="id-title">
-          <b data-i18n="id_title">Dijital Kimlik</b>
-          <span class="muted">UÇSER · <span data-i18n="hero_title"></span></span>
+<div class="container page-pad">
+
+  <section class="hero">
+    <div class="hero-box">
+      <div class="card soft">
+        <span class="badge">UÇSER</span>
+        <h1 class="h1">Havacılık için veri odaklı güvenlik yaklaşımı.</h1>
+        <p class="muted">
+          UÇSER, uçuş sırasında oluşan verilerin izlenmesi, olayların anlaşılması ve
+          sistemlerin geliştirilmesi için modüler bir proje ekosistemi kurar.
+        </p>
+
+        <div class="kpi">
+          <div class="pill">Modüler yaklaşım</div>
+          <div class="pill">Ar-Ge ve eğitim odağı</div>
+        </div>
+
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="index.html">Yakında</a>
+          <a class="btn secondary" href="index.html">Yakında</a>
         </div>
       </div>
 
-      <div class="id-meta">
-        <div class="meta">
-          <small data-i18n="id_device">Cihaz</small>
-          <b id="id_device_value">-</b>
-        </div>
-        <div class="meta">
-          <small data-i18n="id_location">Yerel Saat</small>
-          <b id="id_time_value">-</b>
-        </div>
-        <div class="meta">
-          <small data-i18n="panel_conn">Bağlantı</small>
-          <b id="id_status_value">-</b>
-        </div>
-      </div>
-      <p class="muted" style="margin:12px 0 0;font-size:13px">
-      </p>
-    </div>
-
-    <div class="card kpi col-6">
-      <h3 data-i18n="panel_title">Canlı Sistem Durumu</h3>
-      <div style="display:grid;gap:10px;margin-top:10px">
-        <div class="pill"><b data-i18n="panel_sys">Sistem</b>: <span id="sys_system">-</span></div>
-        <div class="pill"><b data-i18n="panel_phase">Faz</b>: <span id="sys_phase">-</span></div>
-        <div class="pill"><b data-i18n="panel_updated">Son Güncelleme</b>: <span id="sys_updated">-</span></div>
-        <div class="pill"><b data-i18n="panel_conn">Bağlantı</b>: <span id="sys_conn">-</span></div>
-        <div class="pill"><b data-i18n="panel_note">Not</b>: <span id="sys_note">-</span></div>
-      </div>
-    </div>
-  </section>
-
-  
-   <div class="card">
+      <div class="card">
         <h2 class="h2">Hızlı Bakış</h2>
         <div class="list">
           <div class="li"><span class="dot"></span><div><div class="h3">Proje 1: YAKINDA</div><div class="muted">UÇSER çatısı altında yeni projeler yolda.</div></div></div>
@@ -110,13 +69,12 @@
     </div>
   </section>
 
+  <footer class="container">
+          © 2026 UÇSER| Tüm hakları saklıdır.| KİŞİSEL VERİLERİNİZ KAYIT ALTINA ALINMAMAKTADIR.
+  </footer>
 
-  <div class="footer">© 2026 UÇSER | Tüm hakları saklıdır.| KİŞİSEL VERİLERİNİZ KAYIT ALTINDA TUTULMAMAKTADIR</div>
 </div>
 
-
-
 <script src="nav.js"></script>
-<script src="app.js"></script>
 </body>
 </html>
