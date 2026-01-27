@@ -1,0 +1,61 @@
+{
+  "nav_home": "Ana Sayfa",
+  "nav_projects": "Projeler",
+  "nav_news": "Duyurular",
+  "nav_story": "Hikaye",
+  "nav_contact": "İletişim",
+
+  "hero_badge": "UÇSER",
+  "hero_title": "Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri",
+  "hero_sub": "Sade, güvenilir ve ölçeklenebilir yaklaşım ile teknoloji geliştirmeye odaklanıyoruz.",
+
+  "id_title": "Dijital Kimlik",
+  "id_role": "Mod",
+  "id_device": "Cihaz",
+  "id_location": "Yerel Saat",
+  "id_status": "Sistem",
+
+  "device_mobile": "Mobil",
+  "device_desktop": "Masaüstü",
+
+  "status_online": "Çevrimiçi",
+  "status_offline": "Çevrimdışı",
+
+  "panel_title": "Canlı Sistem Durumu",
+  "panel_sys": "Sistem",
+  "panel_phase": "Faz",
+  "panel_updated": "Son Güncelleme",
+  "panel_conn": "Bağlantı",
+  "panel_note": "Not",
+
+  "projects_title": "Projeler",
+  "projects_sub": "UÇSER çatısı altında yeni projeler yolda. Detaylar uygun zamanda paylaşılacaktır.",
+  "projects_card1": "Yakında",
+  "projects_card2": "Yakında",
+  "projects_card3": "Yakında",
+
+  "news_title": "Duyurular",
+  "story_title": "Marka Hikayesi",
+  "story_s1_t": "Nasıl başladık?",
+  "story_s1_p": "UÇSER; disiplinli mühendislik yaklaşımıyla sürdürülebilir sistemler geliştirme hedefiyle doğdu.",
+  "story_s2_t": "Ne yapıyoruz?",
+  "story_s2_p": "Veri toplama, izleme, olay yönetimi ve raporlama gibi alanlarda güvenilir altyapı prensipleriyle ilerliyoruz.",
+  "story_s3_t": "Nereye gidiyoruz?",
+  "story_s3_p": "Test, doğrulama ve ölçeklenebilir geliştirme döngüsüyle uzun vadeli Ar-Ge kültürü inşa ediyoruz.",
+
+  "contact_title": "İletişim",
+  "contact_sub": "Instagram: @ucsertech — E-posta: info@ucser.com",
+  "form_ok": "✅ Mesajınız alındı. En kısa sürede dönüş yapacağız.",
+
+  "mode_public": "Genel",
+  "mode_press": "Basın",
+  "mode_sponsor": "Sponsor",
+  "mode_jury": "Jüri",
+
+  "easter_title": "Özel Erişim",
+  "easter_sub": "Basın / Sponsor / Jüri modunu seçebilir veya giriş yapabilirsiniz.",
+  "login": "Giriş Yap",
+  "register": "Kayıt Ol",
+  "choose_mode": "Mod Seç",
+  "close": "Kapat"
+}
