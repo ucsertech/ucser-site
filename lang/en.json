@@ -1,0 +1,61 @@
+{
+  "nav_home": "Home",
+  "nav_projects": "Projects",
+  "nav_news": "News",
+  "nav_story": "Story",
+  "nav_contact": "Contact",
+
+  "hero_badge": "UCSER",
+  "hero_title": "Aviation Systems, Data Collection & Monitoring Technologies",
+  "hero_sub": "We focus on developing technology with a simple, reliable, and scalable approach.",
+
+  "id_title": "Digital ID",
+  "id_role": "Mode",
+  "id_device": "Device",
+  "id_location": "Local Time",
+  "id_status": "System",
+
+  "device_mobile": "Mobile",
+  "device_desktop": "Desktop",
+
+  "status_online": "Online",
+  "status_offline": "Offline",
+
+  "panel_title": "Live System Status",
+  "panel_sys": "System",
+  "panel_phase": "Phase",
+  "panel_updated": "Last Update",
+  "panel_conn": "Connection",
+  "panel_note": "Note",
+
+  "projects_title": "Projects",
+  "projects_sub": "New projects are on the way under UCSER. Details will be shared when appropriate.",
+  "projects_card1": "Coming Soon",
+  "projects_card2": "Coming Soon",
+  "projects_card3": "Coming Soon",
+
+  "news_title": "News",
+  "story_title": "Brand Story",
+  "story_s1_t": "How did we start?",
+  "story_s1_p": "UCSER was founded to build sustainable systems with disciplined engineering.",
+  "story_s2_t": "What do we do?",
+  "story_s2_p": "We advance with reliable infrastructure principles in data collection, monitoring, event management, and reporting.",
+  "story_s3_t": "Where are we going?",
+  "story_s3_p": "We build a long-term R&D culture through testing, validation, and scalable development cycles.",
+
+  "contact_title": "Contact",
+  "contact_sub": "Instagram: @ucsertech — Email: info@ucser.com",
+  "form_ok": "✅ Message received. We will get back to you soon.",
+
+  "mode_public": "Public",
+  "mode_press": "Press",
+  "mode_sponsor": "Sponsor",
+  "mode_jury": "Jury",
+
+  "easter_title": "Private Access",
+  "easter_sub": "Select Press / Sponsor / Jury mode, or use login/register.",
+  "login": "Login",
+  "register": "Register",
+  "choose_mode": "Choose Mode",
+  "close": "Close"
+}
