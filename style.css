@@ -246,6 +246,73 @@ footer{
   color:#7d86b6;
 }
 
+
+
+/* === DIGITAL ID CARD SMALLER === */
+.idcard {
+  padding: 14px 16px;
+}
+
+.idcard img {
+  width: 40px;          /* LOGO KÜÇÜLDÜ */
+  height: auto;
+}
+
+.id-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.id-title b {
+  font-size: 14px;      /* Dijital Kimlik başlığı */
+}
+
+.id-title span {
+  font-size: 12px;
+}
+
+.id-meta {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.id-meta .meta small {
+  font-size: 11px;
+}
+
+.id-meta .meta b {
+  font-size: 12px;
+}
+
+/* === LIVE SYSTEM PANEL SMALLER === */
+.card.kpi {
+  padding: 14px 16px;
+}
+
+.card.kpi h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.card.kpi .pill {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+/* === GRID DENGESİ === */
+.grid.section {
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .id-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===============================
    RESPONSIVE
 ================================ */
