@@ -3,81 +3,145 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <title>UÇSER | Ana Sayfa</title>
+  <title>UÇSER</title>
+  <link rel="icon" href="assets/logo.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="nav-wrap" id="navbar">
-  <div class="nav container">
-    <a href="index.html" class="brand"><img src="assets/logo.png" alt="UÇSER"><div class="brand-text"><strong>UÇSER</strong><span> Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri</span></div>    </a>
-    <div class="tabs">
-      <a class="tab active" href="index.html">Ana Sayfa</a>
-      <a class="tab" href="projeler.html">Projeler</a>
-      <a class="tab" href="iletisim.html">İletişim</a>
+<div class="nav-wrap">
+  <div class="nav-inner">
+    <div class="nav container">
+      <a href="index.html" class="brand" id="brandLogoTrigger">
+        <img src="assets/logo.png" alt="UÇSER">
+        <div class="brand-text">
+          <strong>UÇSER</strong>
+          <span>Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri</span>
+        </div>
+      </a>
+
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="tabs">
+          <a href="index.html" class="tab" data-i18n="nav_home">Ana Sayfa</a>
+          <a href="projeler.html" class="tab" data-i18n="nav_projects">Projeler</a>
+          <a href="duyurular.html" class="tab" data-i18n="nav_news">Duyurular</a>
+          <a href="hikaye.html" class="tab" data-i18n="nav_story">Hikaye</a>
+          <a href="iletisim.html" class="tab" data-i18n="nav_contact">İletişim</a>
+        </div>
+
+        <div class="lang">
+          <button type="button" data-lang-btn="tr">TR</button>
+          <button type="button" data-lang-btn="en">EN</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="container page-pad">
+<div class="container">
 
-  <section class="hero">
-    <div class="hero-box">
-      <div class="card soft">
-        <span class="badge">UÇSER</span>
-        <h1 class="h1">Havacılık için veri odaklı güvenlik yaklaşımı.</h1>
-        <p class="muted">
-          UÇSER, uçuş sırasında oluşan verilerin izlenmesi, olayların anlaşılması ve
-          sistemlerin geliştirilmesi için modüler bir proje ekosistemi kurar.
-        </p>
+  <section class="card hero section">
+    <span class="badge" data-i18n="hero_badge">UÇSER</span>
+    <h1 class="h1" data-i18n="hero_title">Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri</h1>
+    <p class="p muted" data-i18n="hero_sub">Sade, güvenilir ve ölçeklenebilir yaklaşım ile teknoloji geliştirmeye odaklanıyoruz.</p>
 
-        <div class="kpi">
-          <div class="pill">Modüler yaklaşım</div>
-          <div class="pill">Ar-Ge ve eğitim odağı</div>
-        </div>
+    <div class="actions">
+      <a class="btn primary" href="projeler.html" data-i18n="nav_projects">Projeler</a>
+      <a class="btn" href="iletisim.html" data-i18n="nav_contact">İletişim</a>
+      <span class="pill" id="modePill" data-mode-label></span>
+    </div>
+  </section>
 
-        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" href="index.html">Yakında</a>
-          <a class="btn secondary" href="index.html">Yakında</a>
+  <section class="grid section">
+    <div class="card idcard col-6">
+      <div class="id-top">
+        <img src="assets/logo.png" alt="UÇSER">
+        <div class="id-title">
+          <b data-i18n="id_title">Dijital Kimlik</b>
+          <span class="muted">UÇSER · <span data-i18n="hero_title"></span></span>
         </div>
       </div>
 
-      <div class="card">
-        <h2 class="h2">Hızlı Bakış</h2>
-        <div class="list">
-          <div class="li"><span class="dot"></span><div><div class="h3">Proje 1: YAKINDA</div><div class="muted">UÇSER çatısı altında yeni projeler yolda.</div></div></div>
-          <div class="li"><span class="dot"></span><div><div class="h3">Proje Ekosistemi</div><div class="muted">UÇSER çatısı altında yeni projeler yolda.</div></div></div>
-          <div class="li"><span class="dot"></span><div><div class="h3">Yerli & sürdürülebilir</div><div class="muted">Geliştirilebilir, büyüyen bir yapı hedefi.</div></div></div>
+      <div class="id-meta">
+        <div class="meta">
+          <small data-i18n="id_device">Cihaz</small>
+          <b id="id_device_value">-</b>
         </div>
+        <div class="meta">
+          <small data-i18n="id_location">Yerel Saat</small>
+          <b id="id_time_value">-</b>
+        </div>
+        <div class="meta">
+          <small data-i18n="panel_conn">Bağlantı</small>
+          <b id="id_status_value">-</b>
+        </div>
+      </div>
+      <p class="muted" style="margin:12px 0 0;font-size:13px">
+        ℹ️ Logo’ya 5 kez tıklayın: Özel Erişim
+      </p>
+    </div>
+
+    <div class="card kpi col-6">
+      <h3 data-i18n="panel_title">Canlı Sistem Durumu</h3>
+      <div style="display:grid;gap:10px;margin-top:10px">
+        <div class="pill"><b data-i18n="panel_sys">Sistem</b>: <span id="sys_system">-</span></div>
+        <div class="pill"><b data-i18n="panel_phase">Faz</b>: <span id="sys_phase">-</span></div>
+        <div class="pill"><b data-i18n="panel_updated">Son Güncelleme</b>: <span id="sys_updated">-</span></div>
+        <div class="pill"><b data-i18n="panel_conn">Bağlantı</b>: <span id="sys_conn">-</span></div>
+        <div class="pill"><b data-i18n="panel_note">Not</b>: <span id="sys_note">-</span></div>
       </div>
     </div>
   </section>
 
-  <section class="grid" style="margin-top:16px;">
-    <div class="card col-4">
-      <h2 class="h2">Vizyon</h2>
-      <p class="muted">Güvenlik odaklı, veriyle güçlenen havacılık sistemleri.</p>
-    </div>
-    <div class="card col-4">
-      <h2 class="h2">Yaklaşım</h2>
-      <p class="muted">Ölçeklenebilir mimari, anlamlı veri ve net sunum.</p>
-    </div>
-    <div class="card col-4">
-      <h2 class="h2">Topluluk</h2>
-      <p class="muted">Genç mühendislik kültürü ve sürekli gelişim.</p>
-    </div>
-  </section>
+  <div class="footer">© 2026 UÇSER | Tüm hakları saklıdır.| KİŞİSEL VERİLERİNİZ KAYIT ALTINDA TUTULMAMAKTADIR</div>
+</div>
 
-  <footer class="container">
-          © 2026 UÇSER| Tüm hakları saklıdır.| KİŞİSEL VERİLERİNİZ KAYIT ALTINA ALINMAMAKTADIR.
-  </footer>
+<!-- modal (easter egg) -->
+<!-- (8) bloğunu buraya yapıştır -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <div class="modal-head">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="badge" data-i18n="easter_title">Özel Erişim</span>
+        <button class="btn modal-close" id="modalClose" type="button" data-i18n="close">Kapat</button>
+      </div>
+      <p class="muted" style="margin:10px 16px 0" data-i18n="easter_sub"></p>
+    </div>
 
+    <div class="modal-body">
+      <div class="row">
+        <button class="btn primary" type="button" data-set-mode="press" data-i18n="mode_press">Basın</button>
+        <button class="btn primary" type="button" data-set-mode="sponsor" data-i18n="mode_sponsor">Sponsor</button>
+        <button class="btn primary" type="button" data-set-mode="jury" data-i18n="mode_jury">Jüri</button>
+        <button class="btn" type="button" data-set-mode="public" data-i18n="mode_public">Genel</button>
+      </div>
+
+      <div class="card" style="margin-top:14px;padding:14px">
+        <div class="grid">
+          <div class="col-6">
+            <b data-i18n="login">Giriş Yap</b>
+            <form id="loginForm">
+              <div class="field"><input required placeholder="E-posta"></div>
+              <div class="field"><input required type="password" placeholder="Şifre"></div>
+              <button class="btn" type="submit" style="margin-top:8px">OK</button>
+            </form>
+          </div>
+          <div class="col-6">
+            <b data-i18n="register">Kayıt Ol</b>
+            <form id="regForm">
+              <div class="field"><input required placeholder="Ad Soyad"></div>
+              <div class="field"><input required placeholder="E-posta"></div>
+              <button class="btn" type="submit" style="margin-top:8px">OK</button>
+            </form>
+          </div>
+        </div>
+        <p class="muted" id="authMsg" style="margin:10px 0 0"></p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="nav.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
-
-
-
