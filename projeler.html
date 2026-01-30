@@ -3,60 +3,97 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" type="image/png" href="assets/favicon.png">
   <title>UÇSER | Projeler</title>
-  <link rel="icon" href="assets/logo.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="nav-wrap">
-  <div class="nav-inner">
-    <div class="nav container">
-      <a href="index.html" class="brand" id="brandLogoTrigger">
-        <img src="assets/logo.png" alt="UÇSER">
-        <div class="brand-text">
-          <strong>UÇSER</strong>
-          <span>Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri</span>
-        </div>
-      </a>
-
-      <div style="display:flex;align-items:center;gap:10px">
-        <div class="tabs">
-          <a href="index.html" class="tab" data-i18n="nav_home"></a>
-          <a href="projeler.html" class="tab" data-i18n="nav_projects"></a>
-          <a href="duyurular.html" class="tab" data-i18n="nav_news"></a>
-          <a href="hikaye.html" class="tab" data-i18n="nav_story"></a>
-          <a href="iletisim.html" class="tab" data-i18n="nav_contact"></a>
-        </div>
-        <div class="lang">
-          <button type="button" data-lang-btn="tr">TR</button>
-          <button type="button" data-lang-btn="en">EN</button>
-        </div>
+<!-- NAVBAR -->
+<div class="nav-wrap" id="navbar">
+  <div class="nav container">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="UÇSER">
+      <div class="brand-text">
+        <strong>UÇSER</strong>
+        <span>Havacılık Sistemleri, Veri Toplama ve İzleme Teknolojileri</span>
       </div>
+    </a>
+
+    <div class="tabs">
+      <a href="index.html" class="tab">Ana Sayfa</a>
+      <a href="projeler.html" class="tab active">Projeler</a>
+      <a href="iletisim.html" class="tab">İletişim</a>
     </div>
   </div>
 </div>
 
 <div class="container">
 
-  <section class="card section" style="padding:22px;text-align:center">
-    <span class="badge" data-i18n="projects_title">Projeler</span>
-    <h1 class="h1" data-i18n="projects_sub"></h1>
-    <div style="margin-top:10px"><span class="pill" id="modePill" data-mode-label></span></div>
+  <!-- BAŞLIK -->
+  <section class="card" style="text-align:center;margin-top:24px">
+    <span class="badge">Projeler</span>
+    <h1 class="h1">UÇSER Proje Ekosistemi</h1>
+    <p class="muted">
+      UÇSER, tek bir projeyle sınırlı olmayan; havacılık, veri toplama ve izleme
+      teknolojileri odağında çoklu Ar-Ge çalışmalarını aynı çatı altında
+      yürüten bir teknoloji girişimidir.
+    </p>
   </section>
 
-  <section class="grid section">
-    <div class="card kpi col-4"><h3 data-i18n="projects_card1"></h3><p>UÇSER çatısı altında geliştirme aşamasında.</p></div>
-    <div class="card kpi col-4"><h3 data-i18n="projects_card2"></h3><p>Detaylar uygun zamanda paylaşılacaktır.</p></div>
-    <div class="card kpi col-4"><h3 data-i18n="projects_card3"></h3><p>Vizyon, kalite ve sürdürülebilirlik odağında.</p></div>
+  <!-- GİZLİ PROJELER -->
+  <section class="card" style="margin-top:20px">
+    <h2 class="h2">Geliştirme Aşamasındaki Projeler</h2>
+    <p class="muted">
+      UÇSER çatısı altında yürütülen mevcut ve planlanan projeler, erken aşama
+      geliştirme sürecinde oldukları için kamuya açık isimlendirme ve teknik
+      detay paylaşımı yapılmadan ilerletilmektedir.
+    </p>
+
+    <div class="grid">
+      <div class="col-6">
+        <div class="card" style="height:100%">
+          <h3 class="h3">Yakında</h3>
+          <p class="muted">
+         UÇSER çatısı altında yeni projeler yolda.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="card" style="height:100%">
+          <h3 class="h3">Yakında</h3>
+          <p class="muted">
+          UÇSER çatısı altında yeni projeler yolda.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <div class="footer">© 2026 UÇSER | Tüm hakları saklıdır.</div>
+  <!-- VİZYON -->
+  <section class="card" style="margin-top:20px">
+    <h2 class="h2">UÇSER Proje Vizyonu</h2>
+    <p class="muted">
+      UÇSER projeleri; kısa vadeli sunumların ötesinde, uzun vadeli Ar-Ge ve
+      teknoloji geliştirme hedefleriyle kurgulanmaktadır. Her proje,
+      geliştirilebilir, ölçeklenebilir ve farklı kullanım senaryolarına
+      uyarlanabilir bir altyapı anlayışıyla ele alınmaktadır.
+    </p>
+
+    <p class="muted">
+      Projeler olgunlaştıkça, teknik ve operasyonel detaylar kontrollü biçimde
+      paylaşılacak; UÇSER çatısı altında geliştirilen teknolojiler kamuoyuyla
+      aşamalı olarak buluşturulacaktır.
+    </p>
+  </section>
+
+  <footer class="container muted" style="text-align:center;margin:40px 0">
+    © 2026 UÇSER | Tüm hakları saklıdır.
+  </footer>
+
 </div>
 
-<!-- modal -->
-<div class="modal-backdrop" id="modalBackdrop"> ... (index ile aynı modal) ... </div>
-
 <script src="nav.js"></script>
-<script src="app.js"></script>
-</body
+</body>
+</html>
